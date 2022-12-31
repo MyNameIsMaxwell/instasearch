@@ -5,7 +5,6 @@ import httplib2
 import apiclient.discovery
 from oauth2client.service_account import ServiceAccountCredentials
 
-import file_dumps
 
 # Файл, полученный в Google Developer Console
 if __name__ == '__main__':
@@ -24,8 +23,11 @@ httpAuth = credentials.authorize(httplib2.Http())
 service = apiclient.discovery.build('sheets', 'v4', http=httpAuth)
 
 
-def get_table_values_info():
-    # Пример чтения файла
+def get_table_values_info() -> list:
+    """
+    Функция чтения информации из таблицы и выбирающая имена аккаунтов.
+    :return: users_account_names: список с именами инстаграм-аккаунтов из таблицы.
+    """
     values = service.spreadsheets().values().get(
         spreadsheetId=spreadsheet_id,
         range='Лист1!A2:B9',
@@ -41,8 +43,11 @@ def get_table_values_info():
     return users_account_names
 
 
-# Пример записи в файл
-def post_table_values_info(ids_info):
+def post_table_values_info(ids_info: str) -> None:
+    """
+    Функция записи информации об id аккаунтов в таблицу.
+    :param ids_info: str-запись всех id подписчиков
+    """
     values = service.spreadsheets().values().batchUpdate(
         spreadsheetId=spreadsheet_id,
         body={

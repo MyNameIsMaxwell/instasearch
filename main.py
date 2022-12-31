@@ -4,6 +4,7 @@ from config import INST_USERNAME, INST_PASSWORD
 from get_followers import followers_info
 from get_profile_info import google_sheet_parse
 
+# Подключаем клиент instagrapi
 cl = Client()
 cl.login(INST_USERNAME, INST_PASSWORD)
 
