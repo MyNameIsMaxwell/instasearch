@@ -5,4 +5,5 @@
 
 [![То самое видео](https://i.ytimg.com/vi/Bf8KHZtcxnA/maxresdefault.jpg)](https://youtu.be/RHPYGwVQB2o)
 
-<p>[А вот статья на хабре с текстовым описанием](https://habr.com/ru/post/305378/)</p>
+
+[А вот статья на хабре с текстовым описанием](https://habr.com/ru/post/305378/) ✨
